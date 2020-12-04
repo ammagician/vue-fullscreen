@@ -23,15 +23,13 @@
 </template>
 
 <script>
-import VueFullscreen, { toggleFullscreen } from "./components/index";
+//import VueFullscreen, { toggleFullscreen } from "./components/index";
 import HelloWorld from "./components/HelloWorld.vue";
-console.info(toggleFullscreen);
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
-    VueFullscreen
+    HelloWorld
   },
   data() {
     return {

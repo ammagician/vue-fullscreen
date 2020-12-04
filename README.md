@@ -29,6 +29,7 @@ vue-fullscreen是一个将任意dom元素进行全屏（缩放）显示的组件
 
 ```javascript
     import VueFullscreen from 'vue-fullscreen';
+    import "vue-fullscreen/dist/vue-fullscreen.css";
 ```
 
 Vue 组件加入
@@ -45,8 +46,9 @@ export default {
 全局引入
 
  ```javascript
-import { install } from "vue-fullscreen";
-install(Vue);
+import "vue-fullscreen/dist/vue-fullscreen.css";
+import VueFullscreen from "vue-fullscreen";
+Vue.use(VueFullscreen);
 ```
 
 
@@ -54,6 +56,7 @@ install(Vue);
 
  ```javascript
 import { toggleFullscreen } from "vue-fullscreen";
+toggleFullscreen(document.body)  //默认参数为body
 ```
 
 #### 浏览器
@@ -61,7 +64,8 @@ import { toggleFullscreen } from "vue-fullscreen";
 在页面中使用已打包好的文件。 此时组件已为可用状态。
 
 ```html
-    <script src="vue-fullscreen.umd.min.js"></script>
+    <script src="vue-fullscreen.umd.js"></script>
+    <link rel="stylesheet" href="./vue-fullscreen.css">
 ```
 
 ### 使用
@@ -99,7 +103,7 @@ export default {
 ```html
 <template>
   <div id="app">
-    <VueFullscreen  ref="fullscreen" resize icon>
+    <vue-fullscreen  ref="fullscreen" resize icon>
       <template v-slot:icon>
         <span :title="isFull ? '退出' : '全屏'"
           ><svg-icon
@@ -108,16 +112,16 @@ export default {
         /></span>
       </template>
       <img alt="Vue logo" src="./assets/logo.png" />
-    </VueFullscreen>
+    </vue-fullscreen>
     <div class="br"></div>
-    <VueFullscreen  ref="fullscreen" icon>
+    <vue-fullscreen  ref="fullscreen" icon>
       <img alt="Vue logo" src="./assets/logo.png" />
-    </VueFullscreen>
+    </vue-fullscreen>
     <div class="br"></div>
-    <VueFullscreen @toggle="toggle" ref="fullscreen">
+    <vue-fullscreen @toggle="toggle" ref="fullscreen">
       <HelloWorld msg="Welcome to Your Vue.js App" />
       <button @click="click">{{ isFull ? "退出" : "全屏" }}</button>
-    </VueFullscreen>
+    </vue-fullscreen>
 
     <button @click="click2">{{ isFull ? "退出" : "全屏" }}</button>
   </div>
@@ -152,7 +156,7 @@ export default {
 ```html
 <template>
   <div id="app">
-    <VueFullscreen  ref="fullscreen" resize icon>
+    <vue-fullscreen  ref="fullscreen" resize icon>
       <template v-slot:icon>
         <span :title="isFull ? '退出' : '全屏'"
           ><svg-icon
@@ -161,7 +165,7 @@ export default {
         /></span>
       </template>
       <img alt="Vue logo" src="./assets/logo.png" />
-    </VueFullscreen>
+    </vue-fullscreen>
   </div>
 </template>
 ```
@@ -172,9 +176,9 @@ export default {
 
 ````html
 
-<VueFullscreen @toggle="toggle" icon>
+<vue-fullscreen @toggle="toggle" icon>
   <img alt="Vue logo" src="./assets/logo.png" />
-</VueFullscreen>
+</vue-fullscreen>
 
 ````
 
@@ -192,10 +196,10 @@ methods: {
 
 ````html
 
-<VueFullscreen ref="fullscreen" icon>
+<vue-fullscreen ref="fullscreen" icon>
   <img alt="Vue logo" src="./assets/logo.png" />
   <button @click="click">全屏</button>
-</VueFullscreen>
+</vue-fullscreen>
 
 ````
 

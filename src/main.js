@@ -1,8 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
 import "@/icons";
-//import { install } from "./components/index";
-//install(Vue);
+import VueFullscreen from "./components/index";
+Vue.use(VueFullscreen);
 
 Vue.config.productionTip = false;
 

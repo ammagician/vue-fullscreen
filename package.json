@@ -1,5 +1,5 @@
 {
-  "name": "vue-fullscreen",
+  "name": "vue-full-screen",
   "version": "0.1.0",
   "description": "A Vue fullscreen component.",
   "keywords": [
@@ -16,7 +16,7 @@
   "homepage": "https://github.com/ammagician/vue-fullscreen",
   "main": "dist/vue-fullscreen.common.js",
   "unpkg": "dist/vue-fullscreen.umd.min.js",
-
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib ./src/components/index.js",
