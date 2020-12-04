@@ -28,8 +28,8 @@ vue-fullscreen是一个将任意dom元素进行全屏（缩放）显示的组件
 组件引入
 
 ```javascript
-    import VueFullscreen from 'vue-fullscreen';
-    import "vue-fullscreen/dist/vue-fullscreen.css";
+    import VueFullscreen from '@ammagician/vue-fullscreen';
+    import "@ammagician/dist/vue-fullscreen.css";
 ```
 
 Vue 组件加入
@@ -46,8 +46,8 @@ export default {
 全局引入
 
  ```javascript
-import "vue-fullscreen/dist/vue-fullscreen.css";
-import VueFullscreen from "vue-fullscreen";
+import "@ammagician/dist/vue-fullscreen.css";
+import VueFullscreen from "@ammagician/vue-fullscreen";
 Vue.use(VueFullscreen);
 ```
 
@@ -55,7 +55,7 @@ Vue.use(VueFullscreen);
 引入全屏功能函数
 
  ```javascript
-import { initFullscreen } from "vue-fullscreen";
+import { initFullscreen } from "@ammagician/vue-fullscreen";
 initFullscreen(element, callback)  //element默认参数为body
 ```
 
@@ -71,7 +71,7 @@ initFullscreen(element, callback)  //element默认参数为body
 ### 使用
 
 ```javascript
-import VueFullscreen, { toggleFullscreen } from "./components/index";
+import VueFullscreen, { initFullscreen } from "./components/index";
 import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
@@ -93,7 +93,7 @@ export default {
       this.$refs.fullscreen.toggle();
     },
     click2() {
-      toggleFullscreen();
+      initFullscreen();
     }
   }
 };

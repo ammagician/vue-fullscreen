@@ -1,5 +1,5 @@
 {
-  "name": "vue-full-screen",
+  "name": "@ammagician/vue-fullscreen",
   "version": "0.1.0",
   "description": "A Vue fullscreen component.",
   "keywords": [
