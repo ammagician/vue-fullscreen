@@ -29,23 +29,27 @@ export default {
     };
   },
   mounted() {
-    this.destroyFullScreen = initFullscreen(isFull => {
-      this.isFull = isFull;
-      const fullscreen = this.$refs.fullscreen;
-      const fullscreenWrap = this.$refs.fullscreenWrap;
-      if (isFull && this.resize) {
-        const rw =
-          window.innerWidth / parseInt(fullscreenWrap.getAttribute("oldWidth"));
-        const rh =
-          window.innerHeight /
-          parseInt(fullscreenWrap.getAttribute("oldHeight"));
-        const r = Math.min(rw, rh);
-        fullscreen.style.transform = `scale(${r}, ${r})`;
-      } else {
-        fullscreen.style.removeProperty("transform");
+    this.destroyFullScreen = initFullscreen(
+      this.$refs.fullscreenWrap,
+      isFull => {
+        this.isFull = isFull;
+        const fullscreen = this.$refs.fullscreen;
+        const fullscreenWrap = this.$refs.fullscreenWrap;
+        if (isFull && this.resize) {
+          const rw =
+            window.innerWidth /
+            parseInt(fullscreenWrap.getAttribute("oldWidth"));
+          const rh =
+            window.innerHeight /
+            parseInt(fullscreenWrap.getAttribute("oldHeight"));
+          const r = Math.min(rw, rh);
+          fullscreen.style.transform = `scale(${r}, ${r})`;
+        } else {
+          fullscreen.style.removeProperty("transform");
+        }
+        this.$emit("toggle", isFull);
       }
-      this.$emit("toggle", isFull);
-    }, this.$refs.fullscreenWrap);
+    );
   },
 
   beforeDestroy() {

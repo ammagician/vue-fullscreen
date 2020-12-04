@@ -40,7 +40,7 @@ export const toggleFullscreen = function(element) {
   }
 };
 
-export const initFullscreen = function(callback, element) {
+export const initFullscreen = function(element, callback) {
   const fullscreenchange = function() {
     callback && callback(!!getFullscreenElement());
   };

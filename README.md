@@ -55,8 +55,8 @@ Vue.use(VueFullscreen);
 引入全屏功能函数
 
  ```javascript
-import { toggleFullscreen } from "vue-fullscreen";
-toggleFullscreen(document.body)  //默认参数为body
+import { initFullscreen } from "vue-fullscreen";
+initFullscreen(element, callback)  //element默认参数为body
 ```
 
 #### 浏览器

@@ -23,7 +23,6 @@
 </template>
 
 <script>
-//import VueFullscreen, { toggleFullscreen } from "./components/index";
 import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
