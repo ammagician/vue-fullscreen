@@ -20,7 +20,8 @@ vue-fullscreen是一个将任意dom元素进行全屏（缩放）显示的组件
 
 #### npm
 
-    # 使用 npm
+  # 使用 npm
+
 	npm install vue-fullscreen --save
 
 
@@ -30,29 +31,29 @@ vue-fullscreen是一个将任意dom元素进行全屏（缩放）显示的组件
     import VueFullscreen from 'vue-fullscreen';
 ```
 
-加入到 Vue 组件
+Vue 组件加入
 
  ```javascript
-    export default {
-        components: {
-            VueFullscreen
-        },
-    // ... data, methods, mounted (), etc.
-    }
+export default {
+    components: {
+        VueFullscreen
+    },
+// ... data, methods, mounted (), etc.
+}
 ```
 
 全局引入
 
  ```javascript
-    import { install } from "vue-fullscreen";
-    install(Vue);
+import { install } from "vue-fullscreen";
+install(Vue);
 ```
 
 
 引入全屏功能函数
 
  ```javascript
-    import { toggleFullscreen } from "vue-fullscreen";
+import { toggleFullscreen } from "vue-fullscreen";
 ```
 
 #### 浏览器
@@ -66,61 +67,61 @@ vue-fullscreen是一个将任意dom元素进行全屏（缩放）显示的组件
 ### 使用
 
 ```javascript
-	import VueFullscreen, { toggleFullscreen } from "./components/index";
-  import HelloWorld from "./components/HelloWorld.vue";
+import VueFullscreen, { toggleFullscreen } from "./components/index";
+import HelloWorld from "./components/HelloWorld.vue";
 
-  export default {
-    name: "App",
-    components: {
-      HelloWorld,
-      VueFullscreen
+export default {
+  name: "App",
+  components: {
+    HelloWorld,
+    VueFullscreen
+  },
+  data() {
+    return {
+      isFull: false
+    };
+  },
+  methods: {
+    toggle(isFull) {
+      this.isFull = isFull;
     },
-    data() {
-      return {
-        isFull: false
-      };
+    click() {
+      this.$refs.fullscreen.toggle();
     },
-    methods: {
-      toggle(isFull) {
-        this.isFull = isFull;
-      },
-      click() {
-        this.$refs.fullscreen.toggle();
-      },
-      click2() {
-        toggleFullscreen();
-      }
+    click2() {
+      toggleFullscreen();
     }
-  };
+  }
+};
 ```
 
 
 ```html
-    <template>
-      <div id="app">
-        <VueFullscreen  ref="fullscreen" resize icon>
-          <template v-slot:icon>
-            <span :title="isFull ? '退出' : '全屏'"
-              ><svg-icon
-                :icon-class="isFull ? 'exit-fullscreen' : 'fullscreen'"
-                class-name="disabled"
-            /></span>
-          </template>
-          <img alt="Vue logo" src="./assets/logo.png" />
-        </VueFullscreen>
-        <div class="br"></div>
-        <VueFullscreen  ref="fullscreen" icon>
-          <img alt="Vue logo" src="./assets/logo.png" />
-        </VueFullscreen>
-        <div class="br"></div>
-        <VueFullscreen @toggle="toggle" ref="fullscreen">
-          <HelloWorld msg="Welcome to Your Vue.js App" />
-          <button @click="click">{{ isFull ? "退出" : "全屏" }}</button>
-        </VueFullscreen>
+<template>
+  <div id="app">
+    <VueFullscreen  ref="fullscreen" resize icon>
+      <template v-slot:icon>
+        <span :title="isFull ? '退出' : '全屏'"
+          ><svg-icon
+            :icon-class="isFull ? 'exit-fullscreen' : 'fullscreen'"
+            class-name="disabled"
+        /></span>
+      </template>
+      <img alt="Vue logo" src="./assets/logo.png" />
+    </VueFullscreen>
+    <div class="br"></div>
+    <VueFullscreen  ref="fullscreen" icon>
+      <img alt="Vue logo" src="./assets/logo.png" />
+    </VueFullscreen>
+    <div class="br"></div>
+    <VueFullscreen @toggle="toggle" ref="fullscreen">
+      <HelloWorld msg="Welcome to Your Vue.js App" />
+      <button @click="click">{{ isFull ? "退出" : "全屏" }}</button>
+    </VueFullscreen>
 
-        <button @click="click2">{{ isFull ? "退出" : "全屏" }}</button>
-      </div>
-    </template>
+    <button @click="click2">{{ isFull ? "退出" : "全屏" }}</button>
+  </div>
+</template>
 ```
 
 
@@ -149,20 +150,20 @@ vue-fullscreen是一个将任意dom元素进行全屏（缩放）显示的组件
     自定义切换按钮样式。
 
 ```html
-    <template>
-      <div id="app">
-        <VueFullscreen  ref="fullscreen" resize icon>
-          <template v-slot:icon>
-            <span :title="isFull ? '退出' : '全屏'"
-              ><svg-icon
-                :icon-class="isFull ? 'exit-fullscreen' : 'fullscreen'"
-                class-name="disabled"
-            /></span>
-          </template>
-          <img alt="Vue logo" src="./assets/logo.png" />
-        </VueFullscreen>
-      </div>
-    </template>
+<template>
+  <div id="app">
+    <VueFullscreen  ref="fullscreen" resize icon>
+      <template v-slot:icon>
+        <span :title="isFull ? '退出' : '全屏'"
+          ><svg-icon
+            :icon-class="isFull ? 'exit-fullscreen' : 'fullscreen'"
+            class-name="disabled"
+        /></span>
+      </template>
+      <img alt="Vue logo" src="./assets/logo.png" />
+    </VueFullscreen>
+  </div>
+</template>
 ```
 
 #### 事件
@@ -171,18 +172,18 @@ vue-fullscreen是一个将任意dom元素进行全屏（缩放）显示的组件
 
 ````html
 
-    <VueFullscreen @toggle="toggle" icon>
-      <img alt="Vue logo" src="./assets/logo.png" />
-    </VueFullscreen>
+<VueFullscreen @toggle="toggle" icon>
+  <img alt="Vue logo" src="./assets/logo.png" />
+</VueFullscreen>
 
 ````
 
 ```javascript
-    methods: {
-      toggle(isFull) {
-        this.isFull = isFull;
-      }
-    }
+methods: {
+  toggle(isFull) {
+    this.isFull = isFull;
+  }
+}
 ```
 
 #### 方法
@@ -191,19 +192,19 @@ vue-fullscreen是一个将任意dom元素进行全屏（缩放）显示的组件
 
 ````html
 
-    <VueFullscreen ref="fullscreen" icon>
-      <img alt="Vue logo" src="./assets/logo.png" />
-      <button @click="click">全屏</button>
-    </VueFullscreen>
+<VueFullscreen ref="fullscreen" icon>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <button @click="click">全屏</button>
+</VueFullscreen>
 
 ````
 
 ```javascript
-    methods: {
-      click() {
-        this.$refs.fullscreen.toggle();
-      }
-    }
+methods: {
+  click() {
+    this.$refs.fullscreen.toggle();
+  }
+}
 ```
 
 ## 如何贡献
