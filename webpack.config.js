@@ -5,7 +5,6 @@ function resolve(dir) {
 const config = {
   output: {
     path: path.join(__dirname, "/dist"),
-    publicPath: "/dist/",
     filename: "vue-fullscreen.js",
     libraryTarget: "umd"
   },

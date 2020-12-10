@@ -1,6 +1,6 @@
 {
-  "name": "@ammagician/vue-fullscreen",
-  "version": "0.1.0",
+  "name": "fullscreen-vue",
+  "version": "1.0.0",
   "description": "A Vue fullscreen component.",
   "keywords": [
     "vuejs",
@@ -14,8 +14,8 @@
   },
   "author": "<ammagician@126.com>",
   "homepage": "https://github.com/ammagician/vue-fullscreen",
-  "main": "dist/vue-fullscreen.common.js",
-  "unpkg": "dist/vue-fullscreen.umd.min.js",
+  "main": "dist/fullscreen-vue.common.js",
+  "unpkg": "dist/fullscreen-vue.umd.min.js",
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-draggable-resizable": "^2.2.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
